@@ -169,11 +169,10 @@ app.post('/api/save-calc', (req,res) =>{
     let { nombre, contenido, id } = req.body;
     
     const saveCalcQuery = `
-        INSERT INTO calculos_guardados
+        INSERT INTO alhajas_creativas.calculos_guardados
         (nombre, contenido, id)
         VALUES (?, ?, ?)
     `
-    
     conexion.query(saveCalcQuery, [nombre, contenido, id], (error, result) =>{
         if(error){
 
@@ -225,5 +224,6 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=>{
     console.log(`Servidor creado con exito, para acceder a la página, por favor coloque en el navegador el siguiente link: ${PORT}`)
 })
+
 
 
