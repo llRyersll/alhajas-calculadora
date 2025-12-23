@@ -7,7 +7,11 @@ let conexion = mysql.createConnection({
     database:process.env.DB_NAME,
     user:process.env.DB_USER,
     password:process.env.DB_PASSWORD,
-    port: process.env.DB_PORT || 3306  
+    port: process.env.DB_PORT || 3306, 
+
+    ssl: {
+        rejectUnauthorized: true
+    }
 })
 
 // // prueba de agregar materiales
@@ -222,5 +226,6 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=>{
     console.log(`Servidor creado con exito, para acceder a la página, por favor coloque en el navegador el siguiente link: ${PORT}`)
 })
+
 
 
