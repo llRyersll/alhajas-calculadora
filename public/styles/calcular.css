@@ -1,0 +1,37 @@
+
+:root{
+  /* Paleta Soft Romance */
+  --color-primary:   #FFC4D6; /* Rosa Pastel */
+  --color-secondary: #FF99AC; /* Rosa Intenso (Botones) */
+  --color-accent:    #B8C5B8; /* Verde Salvia */
+  
+  --color-bg:        #FFFDF9; /* Blanco Crema */
+  --color-text:      #4A4A4A; /* Gris Carbón */
+  
+  /* Uso sugerido */
+  --color-link:      var(--color-secondary);
+  --color-btn-text:  #FFFFFF;
+}
+
+
+table{
+    border-color:#4A4A4A;
+    padding: 3px;
+    border: solid 1px;
+}
+
+td{
+    text-align: center;
+    padding: 5px;
+}
+td:hover{
+    background-color:#ec5e78;
+    cursor: pointer;
+}
+#mat-div{
+    overflow: auto;
+}
+h4{
+    margin:0;
+}
+

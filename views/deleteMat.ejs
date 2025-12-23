@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Eliminar Material</title>
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/deleteMat.css">
+</head>
+
+<body>
+    
+    <%- include ("templates/encabezado.ejs")%>
+   <div class="flex-direction-row">
+
+    <div class="width-500">
+    
+        <h2>Eliminar Material</h2>
+        <div class="center width-500">
+
+            <input type="text" placeholder="Buscar material" name="searchbar" id="searchbar"/>  
+        </div>
+
+        <div id="result-list" class="width-500 center flex-direction-column">     
+        </div> 
+    </div>
+    
+    
+    
+    <div class="width-500"> 
+        <h2>Eliminar Calculo</h2>
+        <div class="center margin-5">
+            <input type="text" placeholder="Buscar Calculo" name="buscarCalculo" id="buscarCalculo">
+        </div>
+
+        <div id="calc-list" class="width-500 center flex-direction-column">
+           
+        </div>
+    </div>
+</div>
+    <div class="center flex-direction-column text-align" id="material-seleccionado"></div>
+</body>
+</html>
+
+<script src="/script/deleteMat.js"></script>
+

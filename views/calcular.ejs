@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Calcular Precio</title>
+    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/calcular.css">
+</head>
+
+<body>
+    
+    <%- include ("templates/encabezado.ejs")%>
+    <h2>Calcular precios</h2>
+    
+    
+
+    <div class="justify margin-5">
+        <input type="text" name="name-calc" id="name-calc" placeholder="Nombre del calculo">
+        <button type="button" id="save-calc">Guardar Calculo</button>  
+        <select id="load-calc">
+            <option value='null'>Seleccionar</option>
+        </select>
+    </div>
+
+    <div id="main-calc-div">
+    
+        <div id="mat-list-div">
+            <h4>Lista de materiales</h4>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Eliminar</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-calculo"></tbody>
+            </table>
+            
+            <div id="div-float">
+                <h2>Total: $<span id="total-precio">0.00</span></h2>
+                <h2>Total: Bs <span id="total-precio-bs">0.00</span></h2>
+        </div>
+        </div>
+
+        
+        <div id="mat-div">
+            <h4>Materiales</h4>
+            <div>
+            <input type="text" placeholder="Buscar material" name="searchbar" id="searchbar"> 
+            </div>
+            <!-- <span>Filtrar por: </span> -->
+            <!-- logica del filtro aun sin agregar -->
+            <!-- <select name="filter" id="filter">
+
+        <option value="">Nada</option>
+
+        <option value="Alambre">Alambre</option>
+        <option value="Cadena">Cadena</option>
+        <option value="Cordon">Cordon</option>
+        <option value="Hilo">Hilo</option>
+        <option value="Cristal">Cristal</option>
+        <option value="Dije">Dije</option>
+        <option value="Erraje">Erraje</option>
+        <option value="Fimo">Fimo</option>
+        <option value="Perlas">Perlas</option>
+        <option value="Piedra">Piedras</option>
+        <option value="Separador">Separador</option>
+        <option value="Trancadero">Trancadero</option>
+        <option value="Miyuki">Miyuki</option>
+
+    
+    </select>  -->
+
+
+    
+
+
+
+        <table id="result-list">
+           
+        </table>
+        <div id="otros_inputs">
+
+         <h3>Otros Insumos</h3>
+
+        <h4>Mano de obra: </h4>
+        <input type="number" name="mano_de_obra" placeholder="Mano de obra" id="mano_de_obra">
+        <h4>Papeleria: </h4>
+        <input type="number" name="papeleria" placeholder="Papeleria" id="papeleria">
+        <h4>Transporte: </h4>
+        <input type="number" name="transporte" placeholder="Transporte" id="transporte">
+       <h4>Precio del dolar: </h4>
+        <input type="number" name="dolar_precio" placeholder="Precio del Dolar" id="dolar_precio">
+        <h4>Porcentaje de Ganancia:</h4>
+        <input type="numbre" name="porcentaje_ganancia" id="porcentaje_ganancia" placeholder="Porcentaje de Ganancia" max="100" min="0">
+    </div>
+    
+    </div>
+
+</div>
+
+</body>
+</html>
+<script src="/script/calcular.js"></script>

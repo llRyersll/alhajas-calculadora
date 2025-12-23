@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/editarMat.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Editar Material</title>
+</head>
+<body>
+    <%- include ("templates/encabezado.ejs")%>
+
+    <h2>Editar material</h2>
+    <p>Busca un material y seleccionalo para editarlo</p>
+
+    <div class="center margin-5">
+    <input type="text" placeholder="Buscar material" name="searchbar" id="searchbar"> 
+    </div>
+    <div id="result-list">
+        
+    </div>
+    
+    <div class="center flex-direction-column" id="material-seleccionado"></div>
+
+</body>
+</html>
+<script src="/script/editarMat.js"></script>

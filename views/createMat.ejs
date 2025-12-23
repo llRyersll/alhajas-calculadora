@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Material</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/styles/general.css">
+</head>
+
+<body>
+    
+    <%- include ("templates/encabezado.ejs")%>
+<h2> Crear material</h2>
+
+
+<p class="aling-left margin-20">
+    Recuerda Especificar con cuidado cada uno de estos campos.
+</p>
+<!-- material_type- material_name, material_value, meter, material_id 
+-- alambre/
+-- cadenas/
+-- cordones_hilo/
+-- separador/
+-- dije/
+-- errajes/ 
+-- trancadero/
+-- insumos :stickers bolsas stickers/
+-- piedras--
+-- cristales--
+-- fimo------
+-- miyuki cambiable--
+-- perlas --
+
+-->
+
+
+    
+
+    <div class="margin-5 justify">
+        <h3>Tipo de Material:</h3>
+        <select name="material_type" id="material_type">
+
+        <option value="null">Elegir</option>
+
+        <option value="Alambre">Alambre</option>
+        <option value="Cadena">Cadena</option>
+        <option value="Cordon">Cordon</option>
+        <option value="Hilo">Hilo</option>
+        <option value="Cristal">Cristal</option>
+        <option value="Dije">Dije</option>
+        <option value="Erraje">Erraje</option>
+        <option value="Fimo">Fimo</option>
+        <option value="Perlas">Perlas</option>
+        <option value="Piedra">Piedras</option>
+        <option value="Separador">Separador</option>
+        <option value="Trancadero">Trancadero</option>
+        <option value="Miyuki">Miyuki</option>
+
+    
+    </select> 
+</div>
+<div class="margin-5 justify">
+    <h3>¿Se calcula por metro?</h3>
+    
+    <select name="meter" id="meter"  >
+        <option value="n">No</option>
+        <option value="y">Si</option>
+    </select>
+</div>
+<div   class="margin-5 justify">
+    <h3>Nombre del Material:</h3>
+    <input type="text" name="material_name" id="material_name" placeholder="Nombre del Material">
+</div>
+<div  class="margin-5 justify">
+    <h3>Valor en material por Unidad/Metro:</h3>
+    <input  type="number" step="0.000001" name="material_value" id="material_value" placeholder="Valor del Material">
+</div>
+<div class="margin-5 justify">
+    <button class="submit-btn " type="submit" id="insert">Insertar</button>
+</div>
+
+</body>
+</html>
+<script src="/script/crearMat.js"></script>

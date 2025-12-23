@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Alhajas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/general.css">
+</head>
+
+<body>
+    
+    <%- include ("templates/encabezado.ejs")%>
+    <h4>Bienvedino a <strong>Calculadora de Alhajas</strong> aqui podras calcular los precios de tus piezas de joyería</h6>
+
+        <p> 
+    
+            Ahora mismo te encuentras en la <strong>Página inicial</strong>, Aqui tendrás una pequeña guía sobre como darle uso a estas páginas.
+            En la barra de navegacion ubicada en la sección de arriba puedes navegar entre las siguientes pestañas:
+            
+        </p>
+        <h3 class="aling-left margin-20"><a href="/calcular.ejs">Calcular Precios</a></h3>
+        <p class="aling-left margin-20"><span>Esta</span>es la pestaña que más usarás, allí te encontrarás con 2 secciones, En la derecha podrás usar el buscardor para buscar los materiales previamente creados en la pestaña de <strong><a id="link-text" href="/createMat.ejs">Crear Material</a></strong> al clickear un material se añadira en la sección izquierda y se agregara el precio del material al valor total. En la sección derecha puedes establecer otros valores agregados tales como: 
+            <br>
+            <span>   Mano de obra.</span>
+            <br>
+            <span>   Papeleria.</span>
+            <br>
+            <span>   Transporte.</span>
+            <br>
+            <span>   Precio del dolar.</span>
+            <br>
+            <span>   Porcentaje de Ganancia.</span>
+            <br>
+            <span>Ten</span>encuenta que aun no se ha implementado un sistema de guardado, por lo tanto al cambiar de pestaña o recargar la pagina los calculos <strong>se borraran</strong>, por ahora, ten esto en cuenta y agrega todos los materiales que vayas a añadir al calculo para no tener que retirarte de la pestaña.
+        </p>
+    
+        <h3 class="aling-left margin-20"><a href="/createMat.ejs">Crear Material</a></h3>
+        <p class="aling-left margin-20">Aqui podras crear todos los materiales que desees, Tienes que especificar:
+    
+            <br>  
+            <span>Tipo de material.</span>
+            <br>
+            <span>Si su precio es calculado por metro.</span>
+            <br>
+            <span>Nombre del material.</span>
+            <br>
+            <span>Valor por cada Unidad.</span>
+            <br>
+            <span>Una</span>vez creados puedes editarlos o eliminarlos en las respectivas pestañas.
+        </p>
+
+        <h3 class="aling-left margin-20"><a href="/editarMat.ejs">Editar Material</a></h3>
+        <p class="aling-left margin-20"><span>Aqui</span> podras editar materiales que hayas previamente creado al cometer algun error durante la creaciòn, o si deseas cambiar el precio del material</p>
+        <h3 class="aling-left margin-20"><a href="/deleteMat.ejs">Eliminar Material</a></h3>
+        <p class="aling-left margin-20"><span>Aqui</span> puedes eliminar los materiales que desees.</p>
+
+</body>
+</html>
