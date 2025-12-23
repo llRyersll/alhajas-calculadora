@@ -8,6 +8,7 @@ h1{
 header{
     background-color: var(--color-secondary);
     margin: 0;
+
 }
 
 body{
@@ -199,4 +200,81 @@ form div{
   /* Uso sugerido */
   --color-link:      var(--color-secondary);
   --color-btn-text:  #FFFFFF;
+}
+
+/* =========================================
+   MEDIA QUERIES PARA MOVILES (max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* 1. Ajuste del cuerpo y contenedores generales */
+    body {
+        width: 100%;
+        overflow-x: hidden; /* Evita scroll horizontal indeseado */
+    }
+
+    /* 2. Navegación en columna */
+    nav {
+        flex-direction: column; /* Pone los enlaces uno debajo del otro */
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+
+    /* 3. Convertir filas en columnas generales */
+    .flex-direction-row, 
+    #main-calc-div {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    /* 4. Eliminar anchos fijos de 500px */
+    .width-500, 
+    #mat-list-div, 
+    #mat-div {
+        width: 90% !important; /* Ocupa el 90% de la pantalla del celular */
+        height: auto; /* Deja que la altura crezca según el contenido */
+        margin-bottom: 20px; /* Separación entre cajas */
+    }
+
+    /* 5. Ajustes específicos para la Calculadora */
+    #mat-list-div {
+        order: 2; /* Pone la lista de materiales debajo en móviles */
+        max-height: 400px; /* Evita que sea infinito si hay muchos items */
+    }
+
+    #mat-div {
+        order: 1; /* Pone el buscador primero */
+    }
+
+    /* 6. Ajuste de tablas para que no rompan el diseño */
+    table {
+        width: 100%;
+        font-size: 0.9rem; /* Letra un poco más pequeña */
+    }
+
+    /* 7. Ajuste de Inputs para que no se salgan */
+    input, select, button {
+        width: 100%; /* Que los inputs ocupen todo el ancho disponible */
+        box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+        max-width: 100%;
+    }
+
+    .flex-div {
+        flex-direction: column; /* Inputs de formularios uno abajo del otro */
+        gap: 10px;
+        width: 100%;
+    }
+    
+    /* 8. Ajustes para deleteMat y buscar */
+    .center.width-500 {
+        width: 90%;
+    }
+    
+    /* Texto flotante total */
+    #div-float {
+        position: static; /* Opcional: si flotaba, ahora que se quede quieto */
+        text-align: center;
+        margin-top: 10px;
+    }
 }
