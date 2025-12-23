@@ -7,15 +7,14 @@ let conexion = mysql.createConnection({
     database:process.env.DB_NAME,
     user:process.env.DB_USER,
     password:process.env.DB_PASSWORD,
-    port: process.env.DB_PORT || 3306, 
-
+    port: process.env.DB_PORT || 3306,
     ssl: {
         rejectUnauthorized: true
-    }
+    }  
 })
 
 // // prueba de agregar materiales
-// const test = `INSERT INTO materiales 
+// const test = `INSERT INTO alhajas_creativas.materiales 
 // (material_type, material_name, material_value, meter, material_id)
 // VALUES ('miyuki', 'miyuki rojo', 0.5, 'no',0);`
 
@@ -72,7 +71,7 @@ app.post('/api/insert-materials', (req,res) =>{
     const { material_type, material_name, material_value, meter, material_id } = req.body
     
     const insertData = `
-        INSERT INTO materiales 
+        INSERT INTO alhajas_creativas.materiales 
         (material_type, material_name, material_value, meter, material_id)
         VALUES (?, ?, ?, ?, ?)
     `
@@ -91,7 +90,7 @@ app.post('/api/insert-materials', (req,res) =>{
 app.get("/api/search-materials", (req, res) =>{
     const query = req.query.q;
 
-    const sqlQuery = `SELECT * FROM materiales WHERE material_name LIKE ?`
+    const sqlQuery = `SELECT * FROM alhajas_creativas.materiales WHERE material_name LIKE ?`
     conexion.query(sqlQuery, [`%${query}%`], (error, results) =>{
         if(error){
             console.log(error);
@@ -110,7 +109,7 @@ app.post("/api/edit-materials", (req, res) =>{
     const { id, materialName, materialType, materialValue } = req.body;
 
     const editRow = `
-        UPDATE materiales
+        UPDATE alhajas_creativas.materiales
         SET material_name = ?,
             material_type = ?,
             material_value= ?
@@ -132,7 +131,7 @@ app.post("/api/edit-materials", (req, res) =>{
 app.post("/api/delete-materials", (req,res) =>{
     const {id} = req.body;
     const deleteRow = `
-    DELETE FROM materiales
+    DELETE FROM alhajas_creativas.materiales
     WHERE material_id = ?;
     `
 
@@ -149,7 +148,7 @@ app.post("/api/delete-materials", (req,res) =>{
 app.post("/api/delete-calc", (req,res) =>{
     const {id} = req.body;
     const deleteRow = `
-    DELETE FROM calculos_guardados
+    DELETE FROM alhajas_creativas.calculos_guardados
     WHERE id = ?;
     `
 
@@ -191,7 +190,7 @@ app.get('/api/load-calc-saved', (req,res) => {
     
     
     let calc_content = `
-    SELECT * FROM calculos_guardados; 
+    SELECT * FROM alhajas_creativas.calculos_guardados; 
 `
 conexion.query(calc_content, (error, result) =>{
     if(error){
@@ -207,7 +206,7 @@ conexion.query(calc_content, (error, result) =>{
 app.get('/api/search-calc', (req, res) =>{
     let query = req.query.q;
     let sqlQuery = `
-        SELECT * FROM calculos_guardados WHERE nombre LIKE ?
+        SELECT * FROM alhajas_creativas.calculos_guardados WHERE nombre LIKE ?
         ;
     `   
     conexion.query(sqlQuery, [`%${query}%`], (error, result) =>{
@@ -226,6 +225,5 @@ const PORT = process.env.PORT || 3000
 app.listen(PORT, ()=>{
     console.log(`Servidor creado con exito, para acceder a la página, por favor coloque en el navegador el siguiente link: ${PORT}`)
 })
-
 
 
